@@ -1,0 +1,35 @@
+<head>
+  <title>cordova-example</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <p>
+  	Your current position using <pre>navigator.geolocation.getCurrentPosition</pre>:
+    {{>geolocation navigatorPosition}}
+  </p>
+
+  <p>
+    Your current position using <pre>Geolocation.currentLocation()</pre>:
+    {{>geolocation geolocationPosition}}
+  </p>
+</template>
+
+<template name="geolocation">
+<ul>
+  <li>
+    Latitude: {{latitude}}
+  </li>
+  <li>
+    Longitude: {{longitude}}
+  </li>
+  <li>
+    Accuracy: {{accuracy}}
+  </li>
+</ul>
+</template>
