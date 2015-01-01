@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Meteor Cordova Examples</h1>
 
   {{> hello}}
 </body>
@@ -18,6 +18,13 @@
     Your current position using <pre>Geolocation.currentLocation()</pre>:
     {{>geolocation geolocationPosition}}
   </p>
+
+  <h2>Say Cheese</h2>
+  <button id="take_photo">
+    Take a photo
+  </button>
+
+  <img src="http://placehold.it/300x200" id="photo"/>
 </template>
 
 <template name="geolocation">

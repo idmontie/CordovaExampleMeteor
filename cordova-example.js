@@ -19,7 +19,7 @@ if (Meteor.isClient) {
     },
     geolocationPosition: function () {
       var position = Geolocation.currentLocation();
-      
+
       if ( position == null ) {
         return {
           latitude : 'loading...',
@@ -32,15 +32,18 @@ if (Meteor.isClient) {
   });
 
   Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
+    'click #take_photo' : function ( e ) {
+      e.preventDefault();
+
+      MeteorCamera.getPicture( function ( error, data ) {
+        console.log( error, data )
+        if ( error ) {
+          alert( error );
+        } else {
+          $( '#photo' ).attr( 'src', data )
+        }
+      } )
     }
   });
 }
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}

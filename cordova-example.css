@@ -1,1 +1,6 @@
 /* CSS declarations go here */
+
+pre {
+	background-color: lightblue;
+	display: inline-block;
+}
